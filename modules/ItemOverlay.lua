@@ -1337,12 +1337,12 @@ function app:HookItemOverlay()
 		end)
 
 		app.Event:Register("NEW_RECIPE_LEARNED", function(recipeID, recipeLevel, baseRecipeID)
-			app:CacheRecipe(recipeID)
+			app:CacheRecipe(recipeID, false, true)
 			api:UpdateOverlay()
 		end)
 
 		app.Event:Register("LEARNED_SPELL_IN_SKILL_LINE", function(spellID, skillLineIndex, isGuildPerkSpell)
-			app:CacheRecipe(spellID, true)
+			app:CacheRecipe(spellID, true, true)
 			api:UpdateOverlay()
 		end)
 	end
