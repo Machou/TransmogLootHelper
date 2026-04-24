@@ -21,20 +21,7 @@ app.Event:Register("ADDON_LOADED", function(addOnName, containsBindings)
 		app:HookItemOverlay()
 
 		-- Midnight cleanup
-		if not TransmogLootHelper_Cache.Midnight then
-			StaticPopupDialogs["TRANSMOGLOOTHELPER_MIDNIGHT"] = {
-				text = app.NameLong .. "\n\n"
-					.. "Cached recipes have been reset\n"
-					.. "to allow cleanup of specific characters.\n\n"
-					.. "Please log your profession characters\n"
-					.. "again to cache your recipes!",
-				button1 = OKAY,
-				whileDead = true,
-			}
-			StaticPopup_Show("TRANSMOGLOOTHELPER_MIDNIGHT")
-			TransmogLootHelper_Cache.Recipes = {}
-			TransmogLootHelper_Cache.Midnight = true
-		end
+		TransmogLootHelper_Cache.Midnight = nil
 	end
 end)
 
